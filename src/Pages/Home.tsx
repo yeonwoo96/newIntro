@@ -57,7 +57,7 @@ const Home = () => {
             FrontEnd <span>&</span>
             <br /> Publisher
           </H2>
-          <p className="pacifico">gdgd</p>
+          <p className="pacifico">gdg123d</p>
         </Text>
       </Banner>
     </Wrapper>
