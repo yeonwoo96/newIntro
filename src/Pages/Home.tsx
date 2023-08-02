@@ -11,10 +11,11 @@ const Banner = styled.div`
   z-index: 0;
   width: 100%;
   height: 100vh;
-  background: url("./src/assets/images/masterpiece-gedaf65e66_1920.jpg")
-    no-repeat center center;
+  background: url("src/assets/images/masterpiece-gedaf65e66_1920.jpg") no-repeat
+    center center;
   background-size: cover;
 `;
+
 const Text = styled.div`
   position: absolute;
   top: 50%;
