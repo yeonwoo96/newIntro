@@ -11,8 +11,7 @@ const Banner = styled.div`
   z-index: 0;
   width: 100%;
   height: 100vh;
-  background: url("../src/assets/images/masterpiece.jpg") no-repeat center
-    center;
+  background: url("public/images/masterpiece.jpg") no-repeat center center;
   background-size: cover;
 `;
 
