@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  background: #000;
   font-size: 14px;
   color: #4d5156;
   font-family: 'Noto Sans KR', sans-serif;

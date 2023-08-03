@@ -1,11 +1,6 @@
 import { styled } from "styled-components";
-// className="pacifico"
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+// import { forwardRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 const Nav = styled(motion.div)`
   z-index: 999;
   width: 100%;
@@ -65,12 +60,13 @@ const NavVar = {
   },
 };
 const Header = () => {
+  const onClick = (y: number) => {
+    window.scrollTo({ top: y, left: 0, behavior: "smooth" });
+  };
+  console.log(onClick);
+  // 페이지 이동 이벤트
   const { scrollYProgress } = useScroll();
-  console.log(scrollYProgress);
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  useMotionValueEvent(scrollYProgress, "change", () => {
-    console.log(width);
-  });
   return (
     <Nav variants={NavVar} initial="initial" animate="animate">
       <Wrapper>
