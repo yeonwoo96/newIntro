@@ -36,6 +36,8 @@ const BannerVar = {
   },
 };
 const First = styled.div`
+  box-sizing: border-box;
+  padding: 0 60px;
   cursor: pointer;
   width: 100%;
   height: 100vh;
@@ -45,18 +47,23 @@ const First = styled.div`
   z-index: 0;
   /* pointer-events: none; */
   .left {
-    top: 45%;
+    box-sizing: border-box;
+    padding-top: 45vh;
   }
   .right {
-    top: 50%;
-    font-size: 24px;
-    p {
-      width: 50rem;
-    }
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    padding-bottom: 10vh;
   }
 `;
-
-const Text = styled.div`
+const KYD = styled(motion.span)`
+  font-size: 30px;
+`;
+const Text = styled(motion.div)`
   position: relative;
   color: #fff;
 `;
@@ -103,6 +110,7 @@ const AndVar = {
     },
   },
 };
+
 const Home = () => {
   const Box1 = useRef(null);
   const Box2 = useRef(null);
@@ -144,9 +152,10 @@ const Home = () => {
           </JobBox>
         </Text>
         <Text className="right">
-          <p>Keep It Simple Stupid!</p>
-          <p>You Ain't Gonna Need It</p>
-          <p>Do not Repeat Yourself</p>
+          <KYD>KISS,YAGNI,DRY</KYD>
+          <KYD>Keep It Simple Stupid!</KYD>
+          <KYD>You Ain't Gonna Need It</KYD>
+          <KYD>Do not Repeat Yourself</KYD>
         </Text>
       </First>
       {/* 첫페이지 */}

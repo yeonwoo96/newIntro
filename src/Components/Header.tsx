@@ -59,6 +59,12 @@ const NavVar = {
     },
   },
 };
+const PageBtn = styled(motion.li)``;
+const PageBtnVar = {
+  hover: {
+    textDecoration: "line-through 1px #fff",
+  },
+};
 const Header = () => {
   const onClick = (y: number) => {
     window.scrollTo({ top: y, left: 0, behavior: "smooth" });
@@ -77,9 +83,15 @@ const Header = () => {
           <li>FrontEnd Developer/Publisher</li>
         </Left>
         <Right>
-          <li>works,</li>
-          <li>about,</li>
-          <li>contact</li>
+          <PageBtn variants={PageBtnVar} whileHover="hover">
+            works,
+          </PageBtn>
+          <PageBtn variants={PageBtnVar} whileHover="hover">
+            about,
+          </PageBtn>
+          <PageBtn variants={PageBtnVar} whileHover="hover">
+            contact
+          </PageBtn>
         </Right>
       </Wrapper>
       <Line>
