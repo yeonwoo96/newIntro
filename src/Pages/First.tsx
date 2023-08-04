@@ -21,6 +21,8 @@ const First = styled.div`
     padding: 20vh 0 60px;
     flex-flow: column;
     align-items: center;
+    justify-content: normal;
+    gap: 5rem;
   }
   @media (max-width: 1100px) {
     flex-flow: column;
