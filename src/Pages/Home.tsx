@@ -48,7 +48,7 @@ const First = styled.div`
   /* pointer-events: none; */
   .left {
     box-sizing: border-box;
-    padding-top: 45vh;
+    padding-top: 55vh;
   }
   .right {
     box-sizing: border-box;
@@ -57,13 +57,13 @@ const First = styled.div`
     align-items: flex-end;
     justify-content: flex-end;
     position: relative;
-    padding-bottom: 10vh;
+    padding-bottom: 80px;
   }
 `;
-const KYD = styled(motion.span)`
-  font-size: 30px;
+const Introduce = styled(motion.span)`
+  font-size: 28px;
 `;
-const KYDVar = {
+const IntroduceVar = {
   initial: {
     opacity: 0,
     y: -10,
@@ -80,7 +80,6 @@ const Text = styled(motion.div)`
 const TextVar = {
   initial: {
     opacity: 0,
-    scale: 0.5,
   },
   animate: {
     scale: 1,
@@ -94,14 +93,20 @@ const TextVar = {
     },
   },
 };
+const H3 = styled.h3`
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 40px;
+`;
 const H4 = styled.h4`
   font-size: 24px;
 `;
 const JobBox = styled.div`
+  font-size: 140px;
   font-weight: 600;
 `;
 const Job = styled(motion.h2)`
-  font-size: 60px;
+  line-height: 1;
 `;
 const MiniBox = styled.div`
   display: flex;
@@ -166,7 +171,7 @@ const Home = () => {
       <Banner variants={BannerVar} style={{ background }} />
       <First>
         <Text className="left">
-          <H4 className="pacifico">Creative</H4>
+          <H4 className="pacifico">Lazy Developer</H4>
           <JobBox>
             <MiniBox>
               <Job variants={JobVar}>FrontEnd</Job>
@@ -183,10 +188,16 @@ const Home = () => {
           initial="initial"
           animate="animate"
         >
-          <KYD variants={KYDVar}>KISS,YAGNI,DRY</KYD>
-          <KYD variants={KYDVar}>Keep It Simple Stupid!</KYD>
-          <KYD variants={KYDVar}>You Ain't Gonna Need It</KYD>
-          <KYD variants={KYDVar}>Do not Repeat Yourself</KYD>
+          <H3>KISS, DRY, YAGNI</H3>
+          <Introduce variants={IntroduceVar}>
+            안녕하세요. 게으른 개발자 신연우입니다.
+          </Introduce>
+          <Introduce variants={IntroduceVar}>
+            게으른 성격덕에 코드는 간단하고 심플하게.
+          </Introduce>
+          <Introduce variants={IntroduceVar}>
+            새로 만들기보단 다시 활용 할 수 있게가 모토입니다.
+          </Introduce>
         </Text>
       </First>
       {/* 첫페이지 */}
