@@ -1,10 +1,12 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import { createGlobalStyle } from "styled-components";
 import Header from "./Components/Header";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Pacifico&display=swap');
+::-webkit-scrollbar {
+  display: none;
+}
+/* 스크롤 없애기 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,6 +56,7 @@ table {
 }
 .pacifico{
   font-family: 'Pacifico', cursive;
+  font-weight: 400;
 }
 `;
 function App() {
@@ -62,11 +65,7 @@ function App() {
       {/* <LoadingPage></LoadingPage> */}
       <GlobalStyle />
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <Home />
     </>
   );
 }

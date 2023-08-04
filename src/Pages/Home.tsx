@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { styled } from "styled-components";
 const Wrapper = styled(motion.div)`
   overflow-y: hidden;
@@ -63,14 +63,43 @@ const First = styled.div`
 const KYD = styled(motion.span)`
   font-size: 30px;
 `;
+const KYDVar = {
+  initial: {
+    opacity: 0,
+    y: -10,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+};
 const Text = styled(motion.div)`
   position: relative;
   color: #fff;
 `;
+const TextVar = {
+  initial: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0.5,
+      delayChildren: 2,
+      staggerChildren: 0.2,
+    },
+  },
+};
 const H4 = styled.h4`
   font-size: 24px;
 `;
-const JobBox = styled.div``;
+const JobBox = styled.div`
+  font-weight: 600;
+`;
 const Job = styled(motion.h2)`
   font-size: 60px;
 `;
@@ -112,9 +141,6 @@ const AndVar = {
 };
 
 const Home = () => {
-  const Box1 = useRef(null);
-  const Box2 = useRef(null);
-  const Box3 = useRef(null);
   useEffect(() => {
     window.onbeforeunload = function pushRefresh() {
       window.scrollTo(0, 0);
@@ -138,9 +164,9 @@ const Home = () => {
   return (
     <Wrapper variants={WrapperVar} initial="initial" animate="animate">
       <Banner variants={BannerVar} style={{ background }} />
-      <First ref={Box1}>
-        <Text className="pacifico left">
-          <H4>Creative</H4>
+      <First>
+        <Text className="left">
+          <H4 className="pacifico">Creative</H4>
           <JobBox>
             <MiniBox>
               <Job variants={JobVar}>FrontEnd</Job>
@@ -151,16 +177,21 @@ const Home = () => {
             </MiniBox>
           </JobBox>
         </Text>
-        <Text className="right">
-          <KYD>KISS,YAGNI,DRY</KYD>
-          <KYD>Keep It Simple Stupid!</KYD>
-          <KYD>You Ain't Gonna Need It</KYD>
-          <KYD>Do not Repeat Yourself</KYD>
+        <Text
+          className="right"
+          variants={TextVar}
+          initial="initial"
+          animate="animate"
+        >
+          <KYD variants={KYDVar}>KISS,YAGNI,DRY</KYD>
+          <KYD variants={KYDVar}>Keep It Simple Stupid!</KYD>
+          <KYD variants={KYDVar}>You Ain't Gonna Need It</KYD>
+          <KYD variants={KYDVar}>Do not Repeat Yourself</KYD>
         </Text>
       </First>
       {/* 첫페이지 */}
-      <Box ref={Box2}></Box>
-      <Box ref={Box3}></Box>
+      <Box></Box>
+      <Box></Box>
       <Box></Box>
     </Wrapper>
   );
