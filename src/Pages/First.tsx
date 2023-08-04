@@ -16,7 +16,7 @@ const First = styled.div`
   justify-content: space-between;
   position: relative;
   z-index: 0;
-  @media (max-width: 1400px) {
+  @media (max-width: 1100px) {
     display: block;
     flex-flow: column;
   }
@@ -38,14 +38,13 @@ const First = styled.div`
     position: absolute;
     right: 60px;
     bottom: 5vh;
-    @media (max-width: 460px) {
+    @media (max-width: 375px) {
       bottom: 15vh;
       text-align: center;
       width: auto;
       left: 0;
       right: 0;
       margin: 0 auto;
-
       align-items: center;
     }
   }
@@ -59,7 +58,7 @@ const Job = styled(motion.h2)`
   span {
     font-size: 80px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1060px) {
     font-size: 120px;
     span {
       font-size: 50px;
