@@ -9,15 +9,20 @@ const Box = styled.div`
 
 const First = styled.div`
   box-sizing: border-box;
-  padding: 0 60px;
-  width: 100%;
+  padding: 20vh 60px 60px;
+  width: 100vw;
   height: 100vh;
   display: flex;
+  align-items: end;
   justify-content: space-between;
   position: relative;
   z-index: 0;
+  @media (max-width: 500px) {
+    padding: 20vh 0 60px;
+    flex-flow: column;
+    align-items: center;
+  }
   @media (max-width: 1100px) {
-    display: block;
     flex-flow: column;
   }
   /* pointer-events: none; */
@@ -26,15 +31,7 @@ const First = styled.div`
     flex-flow: column;
     align-content: center;
     box-sizing: border-box;
-    padding-top: 40vh;
-    @media (max-width: 1400px) {
-      padding-top: 25vh;
-      margin-right: 0;
-    }
-    @media (max-width: 450px) {
-      padding-top: 20vh;
-      margin-right: 0;
-    }
+    position: relative;
   }
   .right {
     box-sizing: border-box;
@@ -42,10 +39,7 @@ const First = styled.div`
     flex-flow: column;
     justify-content: flex-end;
     text-align: right;
-    position: absolute;
-    right: 60px;
-    bottom: 5vh;
-    @media (max-width: 390px) {
+    @media (max-width: 500px) {
       text-align: center;
       width: auto;
       left: 0;
@@ -60,10 +54,11 @@ const JobBox = styled.div`
 `;
 const Job = styled(motion.h2)`
   vertical-align: text-bottom;
-  line-height: 1.3;
+  line-height: 1;
   letter-spacing: 0.03em;
   font-size: 200px;
   position: relative;
+
   span {
     position: absolute;
     right: -30px;
@@ -89,13 +84,14 @@ const Job = styled(motion.h2)`
 `;
 const MiniBox = styled.div`
   display: flex;
-  line-height: 1.4;
   align-items: flex-end;
+  &:first-child {
+    margin-bottom: 20px;
+  }
 `;
 const Span = styled(motion.span)`
   position: absolute;
   bottom: 0;
-  text-align: end;
 `;
 const JobVar = {
   initial: {
@@ -112,8 +108,9 @@ const JobVar = {
   },
 };
 const Introduce = styled(motion.span)`
+  white-space: nowrap;
   font-size: 28px;
-  width: 80vw;
+
   @media (max-width: 768px) {
     font-size: 18px;
   }
