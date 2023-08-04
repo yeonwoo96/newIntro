@@ -13,17 +13,8 @@ const Banner = styled(motion.div)`
   z-index: -10;
   width: 100vw;
   height: 100%;
-  background: url("images/masterpiece.jpg") no-repeat center fixed;
-  background-position: 80%;
 `;
-const Black = styled(motion.div)`
-  z-index: -9;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  background: #000;
-`;
+
 const BannerVar = {
   initial: { clipPath: "polygon(50% 10%, 60% 50%, 50% 90%, 40% 50%)" },
   animate: {
@@ -60,12 +51,25 @@ const Home = () => {
   }, []);
   // 페이지 새로고침시 맨상단으로
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 1000], [0.5, 1]);
+  const background = useTransform(
+    scrollY,
+    [0, 1000],
+    [
+      `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url("images/masterpiece.jpg") no-repeat 80% fixed`,
+      `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+  url("images/masterpiece.jpg") no-repeat 80% fixed`,
+    ]
+  );
   return (
     <Wrapper>
       <Header firstPageY={firstPageY} secondPageY={secondPageY} />
-      <Banner variants={BannerVar} initial="initial" animate="animate" />
-      <Black style={{ opacity }} />
+      <Banner
+        variants={BannerVar}
+        style={{ background }}
+        initial="initial"
+        animate="animate"
+      />
       <Firstpage ref={firstPageRef} />
       <SecondPage ref={secondPageRef} />
     </Wrapper>
