@@ -22,10 +22,17 @@ const First = styled.div`
   }
   /* pointer-events: none; */
   .left {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
     box-sizing: border-box;
     padding-top: 40vh;
     @media (max-width: 1400px) {
       padding-top: 25vh;
+      margin-right: 0;
+    }
+    @media (max-width: 450px) {
+      padding-top: 20vh;
       margin-right: 0;
     }
   }
@@ -72,6 +79,7 @@ const Job = styled(motion.h2)`
     }
   }
   @media (max-width: 460px) {
+    font-size: 100px;
     span {
       font-size: 40px;
       right: -24px;
