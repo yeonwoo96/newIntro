@@ -1,6 +1,5 @@
 import Home from "./Pages/Home";
 import { createGlobalStyle } from "styled-components";
-import Header from "./Components/Header";
 
 const GlobalStyle = createGlobalStyle`
 ::-webkit-scrollbar {
@@ -20,6 +19,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  color:#fff;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -64,7 +64,6 @@ function App() {
     <>
       {/* <LoadingPage></LoadingPage> */}
       <GlobalStyle />
-      <Header />
       <Home />
     </>
   );

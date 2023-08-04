@@ -1,5 +1,19 @@
-const Second = () => {
-  return <div></div>;
-};
+import { styled } from "styled-components";
+import React from "react";
 
-export default Second;
+const Second = styled.div`
+  margin-top: 300px;
+  position: relative;
+  height: 100vh;
+`;
+const Wrapper = styled.div``;
+const SecondPage = React.forwardRef<HTMLDivElement>((props, ref) => {
+  console.log(props);
+  return (
+    <Second ref={ref}>
+      <Wrapper></Wrapper>
+    </Second>
+  );
+});
+
+export default SecondPage;

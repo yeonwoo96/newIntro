@@ -17,8 +17,10 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 20px 60px;
+  padding: 0 60px;
+  height: 68px;
   justify-content: space-between;
+  align-items: center;
   p {
     position: fixed;
     background-color: #000;
@@ -28,6 +30,11 @@ const Left = styled.ul`
   display: flex;
   gap: 20px;
   align-items: flex-end;
+  @media (max-width: 768px) {
+    flex-flow: column;
+    gap: 0;
+    align-items: flex-start;
+  }
 `;
 const Logo = styled.span`
   font-size: 20px;
@@ -36,6 +43,10 @@ const Right = styled.ul`
   display: flex;
   align-items: flex-end;
   gap: 4px;
+  @media (max-width: 768px) {
+    position: relative;
+    top: 14px;
+  }
 `;
 const Line = styled.div`
   height: 2px;
@@ -65,7 +76,13 @@ const PageBtnVar = {
     textDecoration: "line-through 1px #fff",
   },
 };
-const Header = () => {
+interface HeaderProps {
+  firstPageY: number;
+  secondPageY: number;
+}
+// const Header: React.FC<HeaderProps> = ({ firstPageY, secondPageY }) => {
+const Header = ({ firstPageY, secondPageY }: HeaderProps) => {
+  console.log(firstPageY, secondPageY);
   const onClick = (y: number) => {
     window.scrollTo({ top: y, left: 0, behavior: "smooth" });
   };
@@ -83,10 +100,18 @@ const Header = () => {
           <li>FrontEnd Developer/Publisher</li>
         </Left>
         <Right>
-          <PageBtn variants={PageBtnVar} whileHover="hover">
+          <PageBtn
+            variants={PageBtnVar}
+            whileHover="hover"
+            onClick={() => onClick(firstPageY)}
+          >
             works,
           </PageBtn>
-          <PageBtn variants={PageBtnVar} whileHover="hover">
+          <PageBtn
+            variants={PageBtnVar}
+            whileHover="hover"
+            onClick={() => onClick(secondPageY)}
+          >
             about,
           </PageBtn>
           <PageBtn variants={PageBtnVar} whileHover="hover">
