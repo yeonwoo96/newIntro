@@ -58,6 +58,10 @@ table {
   font-family: 'Pacifico', cursive;
   font-weight: 400;
 }
+.TuskerGrotesk{
+  font-family: "TuskerGrotesk";
+  font-weight: 400;
+}
 `;
 function App() {
   return (

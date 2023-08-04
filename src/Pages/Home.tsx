@@ -60,7 +60,7 @@ const Home = () => {
   }, []);
   // 페이지 새로고침시 맨상단으로
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 1000], [0.3, 1]);
+  const opacity = useTransform(scrollY, [0, 1000], [0.5, 1]);
   return (
     <Wrapper>
       <Header firstPageY={firstPageY} secondPageY={secondPageY} />

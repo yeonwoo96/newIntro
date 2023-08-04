@@ -17,11 +17,9 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 0 60px;
-  height: 68px;
+  padding: 20px 60px;
   justify-content: space-between;
-  align-items: center;
-  p {
+  align-items: flex-end p {
     position: fixed;
     background-color: #000;
   }
@@ -30,6 +28,7 @@ const Left = styled.ul`
   display: flex;
   gap: 20px;
   align-items: flex-end;
+
   @media (max-width: 768px) {
     flex-flow: column;
     gap: 0;
@@ -43,10 +42,6 @@ const Right = styled.ul`
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  @media (max-width: 768px) {
-    position: relative;
-    top: 14px;
-  }
 `;
 const Line = styled.div`
   height: 2px;
@@ -97,7 +92,7 @@ const Header = ({ firstPageY, secondPageY }: HeaderProps) => {
           <li>
             <Logo className="pacifico">Dev.Shin</Logo>
           </li>
-          <li>FrontEnd Developer/Publisher</li>
+          <li>FE / Publisher</li>
         </Left>
         <Right>
           <PageBtn
