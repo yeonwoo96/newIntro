@@ -38,8 +38,7 @@ const First = styled.div`
     position: absolute;
     right: 60px;
     bottom: 5vh;
-    @media (max-width: 375px) {
-      bottom: 15vh;
+    @media (max-width: 390px) {
       text-align: center;
       width: auto;
       left: 0;
@@ -53,21 +52,30 @@ const JobBox = styled.div`
   font-weight: 600;
 `;
 const Job = styled(motion.h2)`
+  vertical-align: text-bottom;
   line-height: 1.3;
+  letter-spacing: 0.03em;
   font-size: 200px;
+  position: relative;
   span {
+    position: absolute;
+    right: -30px;
+    bottom: 26px;
     font-size: 80px;
   }
   @media (max-width: 1060px) {
     font-size: 120px;
     span {
       font-size: 50px;
+      right: -20px;
+      bottom: 22px;
     }
   }
   @media (max-width: 460px) {
-    font-size: 80px;
     span {
       font-size: 40px;
+      right: -24px;
+      bottom: 22px;
     }
   }
 `;
@@ -76,7 +84,11 @@ const MiniBox = styled.div`
   line-height: 1.4;
   align-items: flex-end;
 `;
-const Span = styled(motion.span)``;
+const Span = styled(motion.span)`
+  position: absolute;
+  bottom: 0;
+  text-align: end;
+`;
 const JobVar = {
   initial: {
     y: 300,
@@ -144,6 +156,7 @@ const H3 = styled.h3`
 `;
 const H4 = styled.h4`
   font-size: 24px;
+  margin-bottom: 20px;
 `;
 
 const Firstpage = React.forwardRef<HTMLDivElement>((props, ref) => {
