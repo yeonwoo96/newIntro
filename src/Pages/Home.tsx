@@ -10,6 +10,8 @@ const Wrapper = styled(motion.div)`
 
 const Banner = styled(motion.div)`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: -10;
   width: 100vw;
   height: 100%;
@@ -56,9 +58,9 @@ const Home = () => {
     [0, 1000],
     [
       `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed`,
+  url("images/masterpiece.jpg") no-repeat 80% fixed `,
       `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed`,
+  url("images/masterpiece.jpg") no-repeat 80% fixed `,
     ]
   );
   return (
