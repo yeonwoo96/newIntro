@@ -74,14 +74,13 @@ const PageBtnVar = {
 interface HeaderProps {
   firstPageY: number;
   secondPageY: number;
+  ProjectsPageY: number;
 }
 // const Header: React.FC<HeaderProps> = ({ firstPageY, secondPageY }) => {
-const Header = ({ firstPageY, secondPageY }: HeaderProps) => {
-  console.log(firstPageY, secondPageY);
+const Header = ({ firstPageY, secondPageY, ProjectsPageY }: HeaderProps) => {
   const onClick = (y: number) => {
     window.scrollTo({ top: y, left: 0, behavior: "smooth" });
   };
-  console.log(onClick);
   // 페이지 이동 이벤트
   const { scrollYProgress } = useScroll();
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
@@ -109,7 +108,11 @@ const Header = ({ firstPageY, secondPageY }: HeaderProps) => {
           >
             about,
           </PageBtn>
-          <PageBtn variants={PageBtnVar} whileHover="hover">
+          <PageBtn
+            variants={PageBtnVar}
+            whileHover="hover"
+            onClick={() => onClick(ProjectsPageY)}
+          >
             contact
           </PageBtn>
         </Right>

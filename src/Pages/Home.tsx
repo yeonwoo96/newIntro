@@ -4,6 +4,8 @@ import { styled } from "styled-components";
 import Firstpage from "./First";
 import SecondPage from "./Second";
 import Header from "../Components/Header";
+import Projects from "./Projects";
+import Footer from "./Footer";
 const Wrapper = styled(motion.div)`
   overflow-y: hidden;
 `;
@@ -31,20 +33,24 @@ const BannerVar = {
 const Home = () => {
   const firstPageRef = useRef<HTMLDivElement>(null);
   const secondPageRef = useRef<HTMLDivElement>(null);
+  const ProjectsPageRef = useRef<HTMLDivElement>(null);
   const [firstPageY, setFirstPageY] = useState<number>(0);
   const [secondPageY, setSecondPageY] = useState<number>(0);
+  const [ProjectsPageY, setProjectsPageY] = useState<number>(0);
   useEffect(() => {
     if (firstPageRef.current) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       setFirstPageY(firstPageRef.current.offsetTop);
-      console.log("FirstPage Y-coordinate:", firstPageY);
     }
     if (secondPageRef.current) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       setSecondPageY(secondPageRef.current.offsetTop);
-      console.log("SecondPage Y-coordinate:", secondPageY);
     }
-  }, [firstPageY, secondPageY]);
+    if (ProjectsPageRef.current) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      setProjectsPageY(ProjectsPageRef.current.offsetTop);
+    }
+  }, [firstPageY, secondPageY, ProjectsPageY]);
   // y좌표 구하기
   useEffect(() => {
     window.onbeforeunload = function pushRefresh() {
@@ -52,20 +58,28 @@ const Home = () => {
     };
   }, []);
   // 페이지 새로고침시 맨상단으로
-  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
   const background = useTransform(
-    scrollY,
-    [0, 1000],
+    scrollYProgress,
+    [0, 0.3, 0.95, 1],
     [
       `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
   url("images/masterpiece.jpg") no-repeat 80% fixed `,
       `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
   url("images/masterpiece.jpg") no-repeat 80% fixed `,
+      `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+  url("images/masterpiece.jpg") no-repeat 80% fixed `,
+      `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url("images/masterpiece.jpg") no-repeat 80% fixed `,
     ]
   );
   return (
     <Wrapper>
-      <Header firstPageY={firstPageY} secondPageY={secondPageY} />
+      <Header
+        firstPageY={firstPageY}
+        secondPageY={secondPageY}
+        ProjectsPageY={ProjectsPageY}
+      />
       <Banner
         variants={BannerVar}
         style={{ background }}
@@ -74,6 +88,8 @@ const Home = () => {
       />
       <Firstpage ref={firstPageRef} />
       <SecondPage ref={secondPageRef} />
+      <Projects ref={ProjectsPageRef} />
+      <Footer />
     </Wrapper>
   );
 };

@@ -167,7 +167,7 @@ const H4 = styled.h4`
 `;
 
 const Firstpage = React.forwardRef<HTMLDivElement>((props, ref) => {
-  console.log(props);
+  // console.log(props);
   return (
     <First ref={ref}>
       <Text className="left TuskerGrotesk">
