@@ -99,7 +99,7 @@ const Header = ({ firstPageY, secondPageY, ProjectsPageY }: HeaderProps) => {
             whileHover="hover"
             onClick={() => onClick(firstPageY)}
           >
-            works,
+            top,
           </PageBtn>
           <PageBtn
             variants={PageBtnVar}
@@ -113,7 +113,7 @@ const Header = ({ firstPageY, secondPageY, ProjectsPageY }: HeaderProps) => {
             whileHover="hover"
             onClick={() => onClick(ProjectsPageY)}
           >
-            contact
+            works
           </PageBtn>
         </Right>
       </Wrapper>

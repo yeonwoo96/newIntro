@@ -26,6 +26,16 @@ const MyworkWrap = styled.div`
   justify-content: space-between;
   padding: 50px 50px;
   gap: 2rem;
+  &.text {
+    position: relative;
+    opacity: 0;
+    top: 100px;
+  }
+  &.show {
+    opacity: 1;
+    top: 0;
+    transition: all 1s;
+  }
   .textbox {
     width: 40%;
     display: flex;
@@ -85,37 +95,63 @@ type IMywork = {
   }[];
 };
 const Btn = styled.button`
-  border: none;
-  color: #181818;
-  font-weight: 500;
-  padding: 5px 10px;
-  background: #fff;
-  font-size: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: inherit;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+`;
+const Img = styled.img`
+  fill: #fff;
+  height: 24px;
 `;
 const LinkBtn = styled.span`
   display: flex;
   font-size: 14px;
   font-weight: 500;
-  color: #181818;
+  color: #fff;
   align-items: center;
   gap: 4px;
   padding: 4px;
   cursor: pointer;
   &:hover {
-    background: #181818;
-    color: #fff;
+    background: none;
+    scale: 1.2;
   }
   .icon {
     width: 16px;
     height: 16px;
   }
 `;
+const H5 = styled.p`
+  color: ${(props) => props.theme.color.titleColorSoft};
+`;
 const Mywork = ({ source }: IMywork) => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const $target = e.target;
+
+      // 화면에 노출 상태에 따라 해당 엘리먼트의 class를 컨트롤
+      if (e.isIntersecting) {
+        $target.classList.add("show");
+      } else {
+        $target.classList.remove("show");
+      }
+    });
+  });
+
+  // 옵저버할 대상을 선택하여 관찰 시작
+  const $items = document.querySelectorAll(".text");
+  $items.forEach((item) => {
+    io.observe(item);
+  });
   return (
     <>
       {source.map((item) => (
-        <MyworkWrap key={item.h3}>
+        <MyworkWrap key={item.h3} className="text">
           <Image
             className={"webImage"}
             right={`${item.right}`}
@@ -123,11 +159,13 @@ const Mywork = ({ source }: IMywork) => {
             timer={item.timer}
           ></Image>
           <Box className="textbox">
-            <h3>{item.h3}</h3>
+            <H5 className="h5">{item.h3}</H5>
             <p>{item.p}</p>
             <div className="skillbox">
-              {item.skill.map((skill, index) => (
-                <Btn key={index}>{skill}</Btn>
+              {item.skill.map((skill) => (
+                <Btn key={skill}>
+                  <Img src={`public/images/${skill}`} alt={skill}></Img>
+                </Btn>
               ))}
             </div>
             <div className="linkbox">

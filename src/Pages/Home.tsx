@@ -6,6 +6,7 @@ import SecondPage from "./Second";
 import Header from "../Components/Header";
 import Projects from "./Projects";
 import Footer from "./Footer";
+import Study from "./study";
 const Wrapper = styled(motion.div)`
   overflow-y: hidden;
 `;
@@ -17,6 +18,7 @@ const Banner = styled(motion.div)`
   z-index: -10;
   width: 100vw;
   height: 100%;
+  background-size: cover;
 `;
 
 const BannerVar = {
@@ -24,7 +26,7 @@ const BannerVar = {
   animate: {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transition: {
-      duration: 1,
+      duration: 0.5,
       delay: 1.5,
     },
   },
@@ -63,14 +65,14 @@ const Home = () => {
     scrollYProgress,
     [0, 0.3, 0.95, 1],
     [
-      `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed `,
-      `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed `,
-      `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed `,
-      `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url("images/masterpiece.jpg") no-repeat 80% fixed `,
+      `linear-gradient(rgba(19, 19, 19, 0.4), rgba(19, 19, 19, 0.4)),
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+      `linear-gradient(rgba(19, 19, 19, 1), rgba(19, 19, 19, 1)),
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+      `linear-gradient(rgba(19, 19, 19, 1), rgba(19, 19, 19, 1)),
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+      `linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.8)),
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
     ]
   );
   return (
@@ -88,8 +90,10 @@ const Home = () => {
       />
       <Firstpage ref={firstPageRef} />
       <SecondPage ref={secondPageRef} />
+      <Study />
       <Projects ref={ProjectsPageRef} />
       <Footer />
+      <Wrapper />
     </Wrapper>
   );
 };

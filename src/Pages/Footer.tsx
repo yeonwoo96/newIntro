@@ -6,7 +6,7 @@ const FooterWrap = styled.div`
   flex-flow: column;
   align-items: center;
   gap: 2rem;
-
+  backdrop-filter: blur(10px);
   padding: 70px;
 `;
 const SnsWrap = styled.div`

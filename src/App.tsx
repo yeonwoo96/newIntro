@@ -1,7 +1,9 @@
 import Home from "./Pages/Home";
-import { createGlobalStyle } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { myTheme } from "./Theme/myTheme";
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Pacifico&display=swap');
 ::-webkit-scrollbar {
   display: none;
 }
@@ -33,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-  background: #000;
+  background: rgba(19,19,19,1 );
   font-size: 14px;
   color: #4d5156;
   font-family: 'Noto Sans KR', sans-serif;
@@ -58,17 +60,49 @@ table {
   font-family: 'Pacifico', cursive;
   font-weight: 400;
 }
+.hansan{
+  font-family:  'Black Han Sans', sans-serif;
+  font-weight: 400;
+}
 .TuskerGrotesk{
   font-family: "TuskerGrotesk";
   font-weight: 400;
+}
+.h2{
+  font-size: 64px;
+  @media (max-width: 1000px) {
+    font-size: 48px;
+  }
+}
+.h3{
+  font-size: 36px;
+  @media (max-width: 1000px) {
+    font-size: 28px;
+  }
+}
+.h4{
+  font-size: 28px;
+  font-weight: 400;
+  @media (max-width: 1000px) {
+    font-size: 20px;
+  }
+}
+.h5{
+  font-size: 24px;
+  font-weight: 400;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
 }
 `;
 function App() {
   return (
     <>
-      {/* <LoadingPage></LoadingPage> */}
-      <GlobalStyle />
-      <Home />
+      <ThemeProvider theme={myTheme}>
+        {/* <LoadingPage></LoadingPage> */}
+        <GlobalStyle />
+        <Home />
+      </ThemeProvider>
     </>
   );
 }

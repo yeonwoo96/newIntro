@@ -51,36 +51,34 @@ const First = styled.div`
     }
   }
 `;
-const JobBox = styled.div`
-  font-weight: 600;
-`;
+const JobBox = styled.div``;
 const Job = styled(motion.h2)`
+  white-space: nowrap;
   vertical-align: text-bottom;
   line-height: 1;
-  letter-spacing: 0.03em;
-  font-size: 200px;
+  font-size: 140px;
   position: relative;
-
+  color: ${(props) => props.theme.color.titleColorSoft};
   span {
     position: absolute;
-    right: -30px;
-    bottom: 26px;
+    right: -80px;
+    bottom: 18px;
     font-size: 80px;
   }
   @media (max-width: 1060px) {
-    font-size: 120px;
-    span {
-      font-size: 50px;
-      right: -20px;
-      bottom: 22px;
-    }
-  }
-  @media (max-width: 460px) {
     font-size: 100px;
     span {
-      font-size: 40px;
-      right: -24px;
-      bottom: 22px;
+      font-size: 50px;
+      right: -40px;
+      bottom: 18px;
+    }
+  }
+  @media (max-width: 500px) {
+    font-size: 60px;
+    span {
+      font-size: 25px;
+      left: 134px;
+      bottom: -17px;
     }
   }
 `;
@@ -94,6 +92,7 @@ const MiniBox = styled.div`
 const Span = styled(motion.span)`
   position: absolute;
   bottom: 0;
+  color: #fff;
 `;
 const JobVar = {
   initial: {
@@ -155,32 +154,31 @@ const TextVar = {
 const H3 = styled.h3`
   white-space: nowrap;
   font-weight: 500;
-  font-size: 36px;
+
   margin-bottom: 40px;
   @media (max-width: 450px) {
-    font-size: 28px;
   }
 `;
 const H4 = styled.h4`
-  font-size: 24px;
+  color: ${(props) => props.theme.color.titleColorThick};
   margin-bottom: 20px;
 `;
 
 const Firstpage = React.forwardRef<HTMLDivElement>((props, ref) => {
-  // console.log(props);
+  console.log(props);
   return (
     <First ref={ref}>
       <Text className="left TuskerGrotesk">
-        <H4 className="pacifico">Lazy Developer</H4>
-        <JobBox>
+        <H4 className="pacifico h4">creative</H4>
+        <JobBox className="hansan">
           <MiniBox>
             <Job variants={JobVar} initial="initial" animate="animate">
-              FRONTEND <Span>&</Span>
+              프론트 엔드 <Span>&</Span>
             </Job>
           </MiniBox>
           <MiniBox>
             <Job variants={JobVar} initial="initial" animate="animate">
-              PUBLISHER
+              웹 퍼블리셔
             </Job>
           </MiniBox>
         </JobBox>
@@ -192,7 +190,7 @@ const Firstpage = React.forwardRef<HTMLDivElement>((props, ref) => {
         animate="animate"
       >
         <Box>
-          <H3 className="pacifico">KISS, DRY, YAGNI</H3>
+          <H3 className="pacifico h3">Dev.Shin</H3>
           <Introduce variants={IntroduceVar}>
             안녕하세요. 게으른 개발자 신연우입니다.
           </Introduce>
