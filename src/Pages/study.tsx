@@ -23,7 +23,7 @@ const StudyWrap = styled.div`
 const Left = styled.div`
   position: relative;
   border-radius: 60px;
-  background: url("public/images/itsme.png");
+  background: url("/images/itsme.png");
   background-size: cover;
   background-position: 100%;
   min-width: 600px;
@@ -90,7 +90,7 @@ const Study = () => {
       <StudyWrap>
         <Left>
           <Cake>
-            <CircleText src="public/images/CircleText.svg" />
+            <CircleText src="/images/CircleText.svg" />
             🍰
           </Cake>
         </Left>

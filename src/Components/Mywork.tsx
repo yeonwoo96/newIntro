@@ -164,7 +164,7 @@ const Mywork = ({ source }: IMywork) => {
             <div className="skillbox">
               {item.skill.map((skill) => (
                 <Btn key={skill}>
-                  <Img src={`public/images/${skill}`} alt={skill}></Img>
+                  <Img src={`/images/${skill}`} alt={skill}></Img>
                 </Btn>
               ))}
             </div>
