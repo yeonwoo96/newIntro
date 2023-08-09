@@ -18,7 +18,7 @@ const Photo = styled.div`
   width: 500px;
   height: 500px;
   border: 1px solid #000;
-  background: url("public/images/masterpiece.jpg") center center;
+  background: url("/images/masterpiece.jpg") center center;
   background-size: 140%;
   background-position: 80%;
 
@@ -195,32 +195,32 @@ const SecondPage = React.forwardRef<HTMLDivElement>((_props, ref) => {
             <div className="CircleContainer">
               <Circle>
                 <Donut win={85} defeat={20}></Donut>
-                <img alt="html" src="../public/images/html.png" />
+                <img alt="html" src="/images/html.png" />
                 <span>85%</span>
               </Circle>
               <Circle>
                 <Donut win={80} defeat={20}></Donut>
-                <img alt="css" src="public/images/css.png" />
+                <img alt="css" src="/images/css.png" />
                 <span>80%</span>
               </Circle>
               <Circle>
                 <Donut win={70} defeat={30}></Donut>
-                <img alt="js" src="public/images/js.png" />
+                <img alt="js" src="/images/js.png" />
                 <span>70%</span>
               </Circle>
               <Circle>
                 <Donut win={70} defeat={30}></Donut>
-                <img alt="js" src="public/images/react.png" />
+                <img alt="js" src="/images/react.png" />
                 <span>70%</span>
               </Circle>
               <Circle>
                 <Donut win={65} defeat={35}></Donut>
-                <img alt="ts" src="public/images/ts.png" />
+                <img alt="ts" src="/images/ts.png" />
                 <span>65%</span>
               </Circle>
               <Circle>
                 <Donut win={65} defeat={35}></Donut>
-                <img alt="sass" src="public/images/sass.png" />
+                <img alt="sass" src="/images/sass.png" />
                 <span>65%</span>
               </Circle>
             </div>
