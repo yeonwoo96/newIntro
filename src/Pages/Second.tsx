@@ -195,7 +195,7 @@ const SecondPage = React.forwardRef<HTMLDivElement>((_props, ref) => {
             <div className="CircleContainer">
               <Circle>
                 <Donut win={85} defeat={20}></Donut>
-                <img alt="html" src="public/images/html.png" />
+                <img alt="html" src="./public/images/html.png" />
                 <span>85%</span>
               </Circle>
               <Circle>
