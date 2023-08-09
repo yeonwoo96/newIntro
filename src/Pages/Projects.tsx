@@ -78,8 +78,7 @@ const NikeClone = [
     url: "https://yeonwoo96.github.io/Busan/",
   },
 ];
-const Projects = React.forwardRef<HTMLDivElement>((props, ref) => {
-  // console.log(props);
+const Projects = React.forwardRef<HTMLDivElement>((_props, ref) => {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       const $target = e.target;
