@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Mywork from "../Components/Mywork";
 import React from "react";
 const ProjectsWrapper = styled.div`
-  padding-top: 300px;
+  margin-top: 300px;
   box-sizing: border-box;
   width: 100vw;
   display: flex;
