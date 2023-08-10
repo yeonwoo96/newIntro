@@ -78,7 +78,7 @@ const Home = () => {
     left: 0;
     z-index: -10;
     width: 100vw;
-    height: ${innerHeight};
+    height: ${innerHeight}px;
     background-size: cover;
   `;
   return (
