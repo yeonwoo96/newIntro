@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 const StudyContainer = styled.div`
-  margin-top: 300px;
+  margin-top: 20vh;
   width: 100vw;
   box-sizing: border-box;
   padding: 0 12vw;

@@ -33,7 +33,7 @@ const Photo = styled.div`
   }
 `;
 const Second = styled.div`
-  margin-top: 300px;
+  margin-top: 20vh;
   position: relative;
   font-weight: 600;
 `;
@@ -146,6 +146,7 @@ const Circle = styled.div`
   width: 75px;
   height: 75px;
   border-radius: 50%;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

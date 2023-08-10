@@ -159,7 +159,7 @@ const Mywork = ({ source }: IMywork) => {
             timer={item.timer}
           ></Image>
           <Box className="textbox">
-            <H5 className="h5">{item.h3}</H5>
+            <H5 className="h3">{item.h3}</H5>
             <p>{item.p}</p>
             <div className="skillbox">
               {item.skill.map((skill) => (
