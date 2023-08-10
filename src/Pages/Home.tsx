@@ -16,8 +16,9 @@ const Banner = styled(motion.div)`
   top: 0;
   z-index: -10;
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 1200px;
   background-size: cover;
+  transition: all 0s;
 `;
 
 const BannerVar = {
