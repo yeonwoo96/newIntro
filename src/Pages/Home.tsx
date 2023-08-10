@@ -7,6 +7,7 @@ import Header from "../Components/Header";
 import Projects from "./Projects";
 import Footer from "./Footer";
 import Study from "./study";
+import Contacts from "./Contacts";
 const Wrapper = styled(motion.div)`
   overflow-y: hidden;
   position: absolute;
@@ -38,23 +39,32 @@ const Home = () => {
   const firstPageRef = useRef<HTMLDivElement>(null);
   const secondPageRef = useRef<HTMLDivElement>(null);
   const ProjectsPageRef = useRef<HTMLDivElement>(null);
+  const ContactsPageRef = useRef<HTMLDivElement>(null);
   const [firstPageY, setFirstPageY] = useState<number>(0);
   const [secondPageY, setSecondPageY] = useState<number>(0);
   const [ProjectsPageY, setProjectsPageY] = useState<number>(0);
+  const [ContactsPageY, setContactsPageY] = useState<number>(0);
+
   useEffect(() => {
     if (firstPageRef.current) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       setFirstPageY(firstPageRef.current.offsetTop);
     }
+
     if (secondPageRef.current) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      setSecondPageY(secondPageRef.current.offsetTop);
+      setSecondPageY(secondPageRef.current.offsetTop - 100);
     }
     if (ProjectsPageRef.current) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      setProjectsPageY(ProjectsPageRef.current.offsetTop);
+      setProjectsPageY(ProjectsPageRef.current.offsetTop - 100);
     }
-  }, [firstPageY, secondPageY, ProjectsPageY]);
+    if (ContactsPageRef.current) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      setContactsPageY(ContactsPageRef.current.offsetTop - 100);
+    }
+    console.log(secondPageY);
+  }, [firstPageY, secondPageY, ProjectsPageY, ContactsPageY]);
   // y좌표 구하기
   useEffect(() => {
     window.onbeforeunload = function pushRefresh() {
@@ -83,6 +93,7 @@ const Home = () => {
         firstPageY={firstPageY}
         secondPageY={secondPageY}
         ProjectsPageY={ProjectsPageY}
+        ContactsPageY={ContactsPageY}
       />
       <Banner
         variants={BannerVar}
@@ -94,6 +105,7 @@ const Home = () => {
       <SecondPage ref={secondPageRef} />
       <Study />
       <Projects ref={ProjectsPageRef} />
+      <Contacts ref={ContactsPageRef} />
       <Footer />
       <Wrapper />
     </Wrapper>

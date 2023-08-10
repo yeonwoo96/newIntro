@@ -75,15 +75,22 @@ interface HeaderProps {
   firstPageY: number;
   secondPageY: number;
   ProjectsPageY: number;
+  ContactsPageY: number;
 }
 // const Header: React.FC<HeaderProps> = ({ firstPageY, secondPageY }) => {
-const Header = ({ firstPageY, secondPageY, ProjectsPageY }: HeaderProps) => {
+const Header = ({
+  firstPageY,
+  secondPageY,
+  ProjectsPageY,
+  ContactsPageY,
+}: HeaderProps) => {
   const onClick = (y: number) => {
     window.scrollTo({ top: y, left: 0, behavior: "smooth" });
   };
   // 페이지 이동 이벤트
   const { scrollYProgress } = useScroll();
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // 페이지 위치 바
   return (
     <Nav variants={NavVar} initial="initial" animate="animate">
       <Wrapper>
@@ -114,6 +121,13 @@ const Header = ({ firstPageY, secondPageY, ProjectsPageY }: HeaderProps) => {
             onClick={() => onClick(ProjectsPageY)}
           >
             works
+          </PageBtn>
+          <PageBtn
+            variants={PageBtnVar}
+            whileHover="hover"
+            onClick={() => onClick(ContactsPageY)}
+          >
+            contacts
           </PageBtn>
         </Right>
       </Wrapper>
