@@ -88,7 +88,7 @@ const Right = styled.div`
   }
 `;
 const H2 = styled.h2`
-  color: ${(props) => props.theme.color.titleColorSoft};
+  color: ${(props) => props.theme.color.titleColorThick};
   white-space: nowrap;
 `;
 const IntroBox = styled.div`

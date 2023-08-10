@@ -41,6 +41,9 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 	line-height: 1.4;
   overflow-x: hidden;
+  @media (max-width: 1000px) {
+    font-size:12px;
+  }
 }
 ol, ul {
 	list-style: none;
@@ -74,11 +77,17 @@ table {
   @media (max-width: 1000px) {
     font-size: 48px;
   }
+  @media (max-width: 500px) {
+    font-size: 40px;
+  }
 }
 .h3{
   font-size: 36px;
   @media (max-width: 1000px) {
     font-size: 28px;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
   }
 }
 .h4{
@@ -87,6 +96,9 @@ table {
   @media (max-width: 1000px) {
     font-size: 20px;
   }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 .h5{
   font-size: 24px;
@@ -94,6 +106,17 @@ table {
   @media (max-width: 1000px) {
     font-size: 16px;
   }
+  @media (max-width: 500px) {
+    font-size: 14px;
+    @media (max-width: 1000px) {
+    font-size: 12px;
+  }
+  }
+}
+html,body{
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 `;
 function App() {

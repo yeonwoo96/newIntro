@@ -56,8 +56,10 @@ const Cake = styled.span`
   }
 `;
 const Right = styled.div`
-  font-size: 18px;
-
+  font-size: 14px;
+  @media (min-width: 1000px) {
+    font-size: 18px;
+  }
   h3 {
     color: ${(props) => props.theme.color.titleColorThick};
     margin-bottom: 1.4rem;
