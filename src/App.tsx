@@ -117,6 +117,9 @@ html,body{
   max-width: 100%;
   overflow-x: hidden;
   width: 100%;
+  height: 100vh;
+height: -webkit-fill-available;
+height: fill-available;
 }
 `;
 function App() {
