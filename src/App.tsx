@@ -40,6 +40,7 @@ body {
   color: #4d5156;
   font-family: 'Noto Sans KR', sans-serif;
 	line-height: 1.4;
+  overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;

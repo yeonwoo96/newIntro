@@ -15,9 +15,10 @@ const StudyWrap = styled.div`
   width: 100%;
   /* align-items: center; */
 
-  @media (max-width: 990px) {
+  @media (max-width: 1500px) {
     flex-flow: column;
     gap: 0;
+    align-items: center;
   }
 `;
 const Left = styled.div`
@@ -25,13 +26,15 @@ const Left = styled.div`
   border-radius: 60px;
   background: url("/images/itsme.png");
   background-size: cover;
-  background-position: 100%;
-  min-width: 600px;
-  min-height: 400px;
-  height: auto;
-  @media (max-width: 990px) {
-    margin-bottom: 30px;
-    min-width: 400px;
+  background-position: 70%;
+  width: 500px;
+  height: 500px;
+  @media (max-width: 1500px) {
+    margin-bottom: 70px;
+  }
+  @media (max-width: 600px) {
+    width: 80vw;
+    height: 80vw;
   }
 `;
 const Cake = styled.span`
@@ -44,8 +47,13 @@ const Cake = styled.span`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   position: absolute;
-  bottom: -30px;
-  right: -30px;
+  bottom: 0px;
+  right: 0px;
+  @media (max-width: 500px) {
+    font-size: 32px;
+    bottom: 0px;
+    right: 0px;
+  }
 `;
 const Right = styled.div`
   font-size: 18px;
@@ -66,6 +74,11 @@ const Right = styled.div`
     li {
       margin-bottom: 14px;
     }
+  }
+  @media (max-width: 1500px) {
+    flex-flow: column;
+    gap: 0;
+    text-align: center;
   }
 `;
 const move = keyframes`
