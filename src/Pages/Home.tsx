@@ -14,10 +14,9 @@ const Wrapper = styled(motion.div)`
 const Banner = styled(motion.div)`
   position: fixed;
   top: 0;
-  left: 0;
   z-index: -10;
   width: 100vw;
-  height: 150vh;
+  height: 1200px;
   background-size: cover;
 `;
 
