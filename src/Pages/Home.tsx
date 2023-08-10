@@ -11,6 +11,16 @@ const Wrapper = styled(motion.div)`
   overflow-y: hidden;
 `;
 
+const Banner = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100dvh;
+  background-size: cover;
+`;
+
 const BannerVar = {
   initial: { clipPath: "polygon(50% 10%, 60% 50%, 50% 90%, 40% 50%)" },
   animate: {
@@ -65,22 +75,6 @@ const Home = () => {
   url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
     ]
   );
-  const [innerHeight, setInnerHeight] = useState<number>(0);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setInnerHeight(window.innerHeight);
-    }
-  }, []);
-  const Banner = styled(motion.div)`
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    width: 100vw;
-    height: ${innerHeight}px;
-    background-size: cover;
-  `;
   return (
     <Wrapper>
       <Header
