@@ -17,7 +17,7 @@ const Banner = styled(motion.div)`
   left: 0;
   z-index: -10;
   width: 100vw;
-  height: 100lvh;
+  height: 150vh;
   background-size: cover;
 `;
 
