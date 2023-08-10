@@ -65,12 +65,12 @@ const Home = () => {
   url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
     ]
   );
-  let vh = 0;
+  const [innerHeight, setInnerHeight] = useState<number>(0);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    if (typeof window !== "undefined") {
+      setInnerHeight(window.innerHeight);
+    }
   }, []);
   const Banner = styled(motion.div)`
     position: fixed;
@@ -78,7 +78,7 @@ const Home = () => {
     left: 0;
     z-index: -10;
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
+    height: ${innerHeight};
     background-size: cover;
   `;
   return (
