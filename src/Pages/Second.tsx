@@ -70,9 +70,14 @@ const Left = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    text-align: center;
     padding-left: 0;
     max-width: fit-content;
+    h2,
+    h3,
+    h4,
+    p {
+      text-align: center;
+    }
   }
 `;
 const Right = styled.div`
