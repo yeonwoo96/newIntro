@@ -67,6 +67,9 @@ const Left = styled.div`
   padding-left: 12vw;
   max-width: 35vw;
   @media (max-width: 1500px) {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     text-align: center;
     padding-left: 0;
     max-width: fit-content;
