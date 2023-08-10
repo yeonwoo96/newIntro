@@ -9,6 +9,8 @@ import Footer from "./Footer";
 import Study from "./study";
 const Wrapper = styled(motion.div)`
   overflow-y: hidden;
+  position: absolute;
+  top: 0;
 `;
 
 const Banner = styled(motion.div)`
@@ -16,7 +18,7 @@ const Banner = styled(motion.div)`
   top: 0;
   z-index: -10;
   width: 100vw;
-  height: 1200px;
+  height: 100vh;
   background-size: cover;
   transition: all 0s;
 `;
@@ -63,16 +65,16 @@ const Home = () => {
   const { scrollYProgress } = useScroll();
   const background = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.95, 1],
+    [0, 0.3, 0.7, 1],
     [
       `linear-gradient(rgba(19, 19, 19, 0.4), rgba(19, 19, 19, 0.4)),
-  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
       `linear-gradient(rgba(19, 19, 19, 1), rgba(19, 19, 19, 1)),
-  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
       `linear-gradient(rgba(19, 19, 19, 1), rgba(19, 19, 19, 1)),
-  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
       `linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.8)),
-  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 80% fixed `,
+  url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
     ]
   );
   return (

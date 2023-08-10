@@ -1,12 +1,8 @@
 import Home from "./Pages/Home";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { myTheme } from "./Theme/myTheme";
-import { useEffect } from "react";
 
 const GlobalStyle = createGlobalStyle`
-:root {
-       --vh: 100%;
-   }
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Pacifico&display=swap');
 ::-webkit-scrollbar {
   display: none;
@@ -126,13 +122,6 @@ html,body{
 `;
 
 function App() {
-  function setScreenSize() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
-  useEffect(() => {
-    setScreenSize();
-  });
   return (
     <>
       <ThemeProvider theme={myTheme}>
