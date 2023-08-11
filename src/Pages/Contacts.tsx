@@ -12,6 +12,7 @@ const H2 = styled.h2`
 `;
 const H4 = styled.h4`
   margin-bottom: 70px;
+  text-align: center;
 `;
 const Card = styled.div`
   letter-spacing: 0.1em;
@@ -107,7 +108,8 @@ const Contacts = React.forwardRef<HTMLDivElement>((_props, ref) => {
     <ContactsWrapper ref={ref}>
       <H2 className="h2">CONTACT</H2>
       <H4 className="h4">
-        같이 일하실 직원을 찾고 계신가요? 여기 제 명함입니다.
+        <p>같이 일하실 직원을 찾고 계신가요?</p>
+        <p>여기 제 명함입니다.</p>
       </H4>
       <Card>
         <Top>
