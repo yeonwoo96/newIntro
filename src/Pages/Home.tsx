@@ -13,7 +13,6 @@ const Wrapper = styled(motion.div)`
   position: absolute;
   top: 0;
 `;
-
 const Banner = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -83,7 +82,7 @@ const Home = () => {
   url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
       `linear-gradient(rgba(19, 19, 19, 1), rgba(19, 19, 19, 1)),
   url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
-      `linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.8)),
+      `linear-gradient(rgba(19, 19, 19, 0.8), rgba(19, 19, 19, 0.4)),
   url("https://bepatrickdavid.com/images/herobg-hd.webp") no-repeat 50% fixed `,
     ]
   );

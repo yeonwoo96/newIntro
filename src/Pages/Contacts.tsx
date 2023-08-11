@@ -8,11 +8,11 @@ const ContactsWrapper = styled.div`
   .text {
     position: relative;
     opacity: 0;
-    right: 30vw;
+    top: 30vw;
     &.show {
       opacity: 1;
-      right: 0;
-      transition: right 1s;
+      top: 0;
+      transition: top 1s;
     }
   }
 `;
