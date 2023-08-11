@@ -5,6 +5,16 @@ const ContactsWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  .text {
+    position: relative;
+    opacity: 0;
+    right: 30vw;
+    &.show {
+      opacity: 1;
+      right: 0;
+      transition: right 1s;
+    }
+  }
 `;
 const H2 = styled.h2`
   color: ${(props) => props.theme.color.titleColorThick};
@@ -104,6 +114,23 @@ const Bot = styled.div`
 const BotMent = styled.p``;
 const Svg = styled.svg``;
 const Contacts = React.forwardRef<HTMLDivElement>((_props, ref) => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const $target = e.target;
+      // 화면에 노출 상태에 따라 해당 엘리먼트의 class를 컨트롤
+      if (e.isIntersecting) {
+        $target.classList.add("show");
+      } else {
+        $target.classList.remove("show");
+      }
+    });
+  });
+
+  // 옵저버할 대상을 선택하여 관찰 시작
+  const $items = document.querySelectorAll(".text");
+  $items.forEach((item) => {
+    io.observe(item);
+  });
   return (
     <ContactsWrapper ref={ref}>
       <H2 className="h2">CONTACT</H2>
@@ -111,7 +138,7 @@ const Contacts = React.forwardRef<HTMLDivElement>((_props, ref) => {
         <p>같이 일하실 직원을 찾고 계신가요?</p>
         <p>여기 제 명함입니다.</p>
       </H4>
-      <Card>
+      <Card className="text">
         <Top>
           <TopLeft>
             <Name>SHIN YEON WOO</Name>

@@ -57,6 +57,21 @@ const Cake = styled.span`
 `;
 const Right = styled.div`
   font-size: 14px;
+  .text {
+    position: relative;
+    opacity: 0;
+    scale: 0;
+    transform-origin: 0 50%;
+    transform: translate(0px, 30%);
+    transform: rotate(45deg);
+
+    &.show {
+      opacity: 1;
+      scale: 1;
+      transform: translate(0px, 0%);
+      transition: all 0.5s;
+    }
+  }
   @media (min-width: 1000px) {
     font-size: 18px;
   }
@@ -100,6 +115,23 @@ const CircleText = styled.img`
   animation: ${move} 10s infinite linear;
 `;
 const Study = () => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const $target = e.target;
+      // 화면에 노출 상태에 따라 해당 엘리먼트의 class를 컨트롤
+      if (e.isIntersecting) {
+        $target.classList.add("show");
+      } else {
+        $target.classList.remove("show");
+      }
+    });
+  });
+
+  // 옵저버할 대상을 선택하여 관찰 시작
+  const $items = document.querySelectorAll(".text");
+  $items.forEach((item) => {
+    io.observe(item);
+  });
   return (
     <StudyContainer>
       <StudyWrap>
@@ -110,10 +142,10 @@ const Study = () => {
           </Cake>
         </Left>
         <Right>
-          <h3 className="h2">이런걸 배웠습니다.</h3>
-          <div className="educationwrap">
-            <h4 className="h4 Hilite">Education ✏️</h4>
-            <ul className="education">
+          <h3 className="h2 text">이런걸 배웠습니다.</h3>
+          <div className="educationwrap text">
+            <h4 className="h4 Hilite text">Education ✏️</h4>
+            <ul className="education text">
               <li>
                 <span className="date"> 2022.02.01 - 2022.06.29</span>
                 <br />
@@ -131,7 +163,7 @@ const Study = () => {
               </li>
             </ul>
           </div>
-          <div className="Bookwrap">
+          <div className="Bookwrap text">
             <h4 className="h4 ">Book 📚</h4>
             <ul className="book">
               <li>📕 Do it! HTML+CSS+자바스크립트 웹 표준의 정석</li>
