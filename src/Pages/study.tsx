@@ -147,6 +147,11 @@ const Study = () => {
             <h4 className="h4 Hilite text">Education ✏️</h4>
             <ul className="education text">
               <li>
+                <span className="date"> 2021.05 - 2021.11</span>
+                <br />
+                🧑🏻‍💻 나래디자인 학원 웹 디자이너/퍼블리셔 교육과정 수료{" "}
+              </li>
+              <li>
                 <span className="date"> 2022.02.01 - 2022.06.29</span>
                 <br />
                 🧑🏻‍💻 코리아 IT 아카데미 프론트엔드(개발자) 과정{" "}
