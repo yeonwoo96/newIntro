@@ -147,22 +147,27 @@ const Study = () => {
             <h4 className="h4 Hilite text">Education ✏️</h4>
             <ul className="education text">
               <li>
-                <span className="date"> 2021.05 - 2021.11</span>
+                <span className="date"> 2021.05 - 2021.10</span>
                 <br />
-                🧑🏻‍💻 나래디자인 학원 웹 디자이너/퍼블리셔 교육과정 수료{" "}
+                😊 나래디자인 학원 웹 디자이너/퍼블리셔 교육과정 수료{" "}
               </li>
               <li>
-                <span className="date"> 2022.02.01 - 2022.06.29</span>
+                <span className="date"> 2021.11- 2022.02</span>
+                <br />
+                😊 이커머스 회사(GYU) 웹 디자이너 근무
+              </li>
+              <li>
+                <span className="date"> 2022.03 - 2022.06</span>
                 <br />
                 🧑🏻‍💻 코리아 IT 아카데미 프론트엔드(개발자) 과정{" "}
               </li>
               <li>
-                <span className="date">2022.07.01 - 2022.12.01</span>
+                <span className="date">2022.07 - 2022.12</span>
                 <br />
                 👩🏼‍💻 독학 및 NomadCoder React JS 마스터 클래스 수강
               </li>
               <li>
-                <span className="date">2022.12.01 - 2023.05.31</span>
+                <span className="date">2022.12 - 2023.05</span>
                 <br />
                 🧑🏻‍💻 제로베이스 프론트엔드 스쿨 10기 수료{" "}
               </li>
