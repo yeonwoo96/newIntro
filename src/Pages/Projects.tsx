@@ -38,6 +38,16 @@ const H4 = styled.p`
 
 const NikeClone = [
   {
+    img: "/images/hyundai.png",
+    h3: "반응형 현대 자동차 구현 🚗",
+    p: "반응형으로 현대 자동차 온라인 스토어를 구현 하였습니다. 리액트와 타입스크립트를 framer-motion 을 사용하여 애니메이션을 구현하였습니다 .",
+    skill: ["react.png", "ts.png", "vite.svg"],
+    timer: 3,
+    github: "https://github.com/yeonwoo96/hyundaecar",
+    right: false,
+    url: "https://hyundaecar.vercel.app/",
+  },
+  {
     img: "/images/netflixClone.png",
     h3: "PC화면 넷플릭스 구현🎥",
     p: "PC화면 전용으로 넷플릭스 사이트를 간략히 구현 하였습니다. TMDB의 API를 이용해 영화정보를 실시간으로 받아오고 있으며 애니메이션 효과는 Framer-motion을 활용 하였습니다.",
